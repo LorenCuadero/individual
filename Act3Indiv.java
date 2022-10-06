@@ -1,77 +1,82 @@
+import java.io.*;
 import java.util.*;
 
-class NameException extends Exception {
-    public NameException(String message) {
-        super(message);
-    }
-
-    public void errorExc(String message) {
-        System.out.println("This input in not valid: " + message);
-    }
-}
-
 public class Act3Indiv {
-    // Continue with the activity from Monday. Use the same repository.
-    // 1. Create a class with at least 2 properties, and also your own Exception
-    // class.
-    // 2. In the Main Class, there will be a number input that will ask the user how
-    // many objects to create.
-    // 3. Put the objects inside an array of objects created, you can use ArrayList
-    // and use the class that you created as the object.
-    // 4. Ask for user input for the values of the properties (ex. Name, Age for
-    // Person class). All the objects created must have values.
-    // 5. Think of two scenarios to prevent and implement try catch. (ex. Name
-    // should be string or should not contain special characters etc.)
 
-    // You can create or use the Main class used from Monday. Submit with the
-    // repository link.
+  private static int length;
 
-    public static void main(String[] args) {
-        List<Act3IndivClass> classes = new ArrayList<Act3IndivClass>();
-        // Act3IndivClass act3 = new Act3IndivClass();
-        Scanner input = new Scanner(System.in);
+  public static void main(String[] args) throws NameException {
+    //variables used to create account
+    String name;
+    String amounting;
+    int accountNum;
+    int count = 0;
+    int count1 = 0;
+    double amount;
+    final int MAX = 999999999;
 
-        System.out.println("              Friends Recorder\n");
-        System.out.println("____________________________________________\n");
-        System.out.println("Name: ");
-        String name = input.nextLine();
-        System.out.println("\nHi, " + name);
-        System.out.println("\n____________________________________________\n");
-        System.out.println("Do you want to record your friends list? [0 = no or 1 = yes] \n");
-        Integer names = input.nextInt();
-        System.out.println("____________________________________________\n");
+    Scanner keyboard = new Scanner(System.in);
+    Random rand = new Random();
+    List<Act3IndivClass> act = new ArrayList<Act3IndivClass>();
+    List<String> act1 = new ArrayList<String>();
 
-        while (true) {
-            switch (input.nextLine()) {
-                case "1":
+    accountNum = rand.nextInt(MAX);
+    System.out.println(
+      "____________________________________________________________________________\n"
+    );
+    System.out.println("                           LC's Banking Program \n");
+    System.out.println(
+      "____________________________________________________________________________\n"
+    );
+    do {
+      System.out.println("Enter full name: ");
+      name = keyboard.nextLine();
 
-                    if (classes.contains("")) {
-                        System.out.println("Add a friends' name to the list: ");
-                        String naming = input.nextLine();
-                        System.out.println("Add a friends' age to the list: ");
-                        Integer age = input.nextInt();
-                        // classes.add(naming, age);
-                        for (int a = 0; a < classes.size(); a++) {
-
-                            System.out.println(a);
-                        }
-                        if (names < 0 || names > 1) {
-
-                        }
-
-                    }
-                case "2":
-
-                default:
-                    try {
-                        throw new NameException(null);
-                    } catch (NameException e) {
-                        e.errorExc(null);
-                    }
-
-            }
-
+      try {
+        length = name.length();
+        for (int i = 0; i < length; i++) {
+          if (
+            !Character.isDigit(name.charAt(i)) &&
+            !Character.isLetter(name.charAt(i)) &&
+            !Character.isWhitespace(name.charAt(i))
+          ) {
+            count++;
+            throw new NameException("              -->   Invalid Amount!  <--");
+          }
         }
+      } catch (NameException e) {
+        e.errorName();
+      }
+      while (true) {
+        System.out.println("Menu: ");
+        act1.add("1.) Deposite ");
+        act1.add("2.) Withraw ");
+        act1.add("3.) Check Balance ");
+        act1.add("4.) Logout ");
+        System.out.println("Enter selected menu: ");
+      int menu = keyboard.nextInt();
+        
+        switch(menu){
+          do{
+          System.out.println("Enter amount to deposit: ");
+          amount = keyboard.nextDouble();
+          try {
+            if (amount < 0) {
+              throw new NumException("              -->   Invalid Amount!  <--");
+            }
+          } catch (NumException exc) {
+            exc.errorExc();
+            System.exit(0);
+          }
+          Act3IndivClass acct1 = new Act3IndivClass(name, accountNum, amount);
+          act.add(acct1);
+          System.out.println(act);
+        while (amount == 0);
+          default:
+        }
+      }
 
-    }
+
+   
+  }
 }

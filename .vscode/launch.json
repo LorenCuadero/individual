@@ -1,0 +1,83 @@
+{
+          // Use IntelliSense to learn about possible attributes.
+          // Hover to view descriptions of existing attributes.
+          // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+          "version": "0.2.0",
+          "configurations": [
+                    {
+                              "name": "Java",
+                              "type": "java",
+                              "request": "launch",
+                              "stopOnEntry": true,
+                              "jdkPath": "${env:JAVA_HOME}/bin",
+                              "cwd": "${fileDirname}",
+                              "startupClass": "${fileBasenameNoExtension}",
+                              "classpath": [
+                                        ".",
+                                        "${fileDirname}"
+                              ]
+                    },
+                    {
+                              "name": "Java Console App",
+                              "type": "java",
+                              "request": "launch",
+                              "stopOnEntry": true,
+                              "jdkPath": "${env:JAVA_HOME}/bin",
+                              "cwd": "${fileDirname}",
+                              "startupClass": "${fileBasenameNoExtension}",
+                              "classpath": [
+                                        ".",
+                                        "${fileDirname}"
+                              ],
+                              "externalConsole": true
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch Current File",
+                              "request": "launch",
+                              "mainClass": "${file}"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch Act3Indiv",
+                              "request": "launch",
+                              "mainClass": "Act3Indiv",
+                              "projectName": "individual_23f2a881"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch Activity2",
+                              "request": "launch",
+                              "mainClass": "Activity2",
+                              "projectName": "individual_23f2a881"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch AnotherActivity",
+                              "request": "launch",
+                              "mainClass": "AnotherActivity",
+                              "projectName": "individual_23f2a881"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch ArrayListMain",
+                              "request": "launch",
+                              "mainClass": "ArrayListMain",
+                              "projectName": "individual_23f2a881"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch HashMapMain",
+                              "request": "launch",
+                              "mainClass": "HashMapMain",
+                              "projectName": "individual_23f2a881"
+                    },
+                    {
+                              "type": "java",
+                              "name": "Launch HashSetMain",
+                              "request": "launch",
+                              "mainClass": "HashSetMain",
+                              "projectName": "individual_23f2a881"
+                    }
+          ]
+}
