@@ -1,6 +1,6 @@
 import java.text.*;
 
-public class Act3IndivClass<DataType> {
+public class Record<DataType> {
 
  //instance variables 
  private String name; 
@@ -8,7 +8,7 @@ public class Act3IndivClass<DataType> {
  private double balance;
  
  //the Account constructor
- public Act3IndivClass(String initName, int initId, double initBalance){
+ public Record(String initName, int initId, double initBalance){
   
   name = initName;
   accountNum = initId;
